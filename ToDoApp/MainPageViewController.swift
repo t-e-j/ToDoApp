@@ -21,6 +21,7 @@ class MainPageViewController: UITableViewController, NewTask, TaskCompletion {
     override func viewDidLoad() {
         toDoTasks.append(Task(taskTitle: "Study for mid-term of Multimedia class"))
         toDoTasks.append(Task(taskTitle: "Visit OIP "))
+        toDoTasks.append(Task(taskTitle: "Complete assignment!"))
     }
     
     
@@ -69,7 +70,4 @@ class MainPageViewController: UITableViewController, NewTask, TaskCompletion {
         
     }
 }
-
-
-
 
