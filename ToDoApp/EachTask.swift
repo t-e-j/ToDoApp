@@ -15,9 +15,22 @@ protocol TaskCompletion {
 
 class EachTask : UITableViewCell {
  
+//    var details :String
+//    var completed :Bool
+//
+//    override var description: String{
+//        return "details: \(details), completed: \(completed)"
+//    }
+//
+//    init(details: String, completed: Bool) {
+//        self.details = details
+//        self.completed = completed
+//    }
+//
     @IBOutlet weak var checkBox: UIButton!
     
-    @IBOutlet weak var taskName: UILabel!
+    @IBOutlet weak var taskName: UITextView!
+    //@IBOutlet weak var taskName: UILabel!
     
     @IBAction func checkBoxClick(_ sender: Any) {
         if tasks![taskNumber!].completed {
@@ -28,19 +41,24 @@ class EachTask : UITableViewCell {
 
     }
     
+   
     var delegate : TaskCompletion?
     var taskNumber : Int?
     var tasks : [Task]?
     
 }
 
-class Task :UITableViewController{
-    var taskTitle = ""
-    var completed = false
-    
-    convenience init (taskTitle: String){
-        self.init()
-        self.taskTitle = taskTitle
-    }
-}
+//class Task : Codable{
+//    var taskTitle :String
+//    var completed : Bool
+//
+//    init (taskTitle: String, completed: Bool){
+//        //self.init()
+//        self.taskTitle = taskTitle
+//        self.completed = completed
+//        
+//    }
+//
+//
+//}
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R30-1O-4jb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R30-1O-4jb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,17 +24,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67M-So-4z4">
-                                <rect key="frame" x="16" y="543" width="343" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Add">
-                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="addNewTask:" destination="IGt-bP-Muc" eventType="touchUpInside" id="JHr-gA-jU8"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new Task in the list:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceU-31-Dbo">
                                 <rect key="frame" x="88.5" y="93" width="198" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,11 +33,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67M-So-4z4">
+                                <rect key="frame" x="16" y="350.5" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="O2F-q0-CsE"/>
+                                </constraints>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addNewTask:" destination="IGt-bP-Muc" eventType="touchUpInside" id="JHr-gA-jU8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ceU-31-Dbo" firstAttribute="centerX" secondItem="48b-Oq-peF" secondAttribute="centerX" id="Fzy-eL-tVB"/>
                             <constraint firstItem="ceU-31-Dbo" firstAttribute="top" secondItem="48b-Oq-peF" secondAttribute="top" constant="29" id="jAP-c8-w65"/>
+                            <constraint firstItem="67M-So-4z4" firstAttribute="centerX" secondItem="48b-Oq-peF" secondAttribute="centerX" id="own-FS-EX4"/>
+                            <constraint firstItem="67M-So-4z4" firstAttribute="centerY" secondItem="48b-Oq-peF" secondAttribute="centerY" id="x6V-H0-00N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="48b-Oq-peF"/>
                     </view>
@@ -81,15 +85,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTF-GM-rQn">
-                                            <rect key="frame" x="38" y="5" width="337" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="a59-5J-tnG"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4Q-gY-2b0">
                                             <rect key="frame" x="0.0" y="5" width="30" height="30"/>
                                             <constraints>
@@ -101,18 +96,22 @@
                                                 <action selector="checkBoxClick:" destination="YUY-P5-Kbt" eventType="touchUpInside" id="TJl-vx-IHb"/>
                                             </connections>
                                         </button>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PoA-Dj-sP6">
+                                            <rect key="frame" x="45" y="0.0" width="322" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Y4Q-gY-2b0" firstAttribute="leading" secondItem="Wyc-kP-TJO" secondAttribute="leading" id="DfU-k6-eFu"/>
-                                        <constraint firstItem="uTF-GM-rQn" firstAttribute="top" secondItem="Y4Q-gY-2b0" secondAttribute="top" id="GQu-l4-WAz"/>
                                         <constraint firstItem="Y4Q-gY-2b0" firstAttribute="top" secondItem="Wyc-kP-TJO" secondAttribute="top" constant="5" id="JBB-cW-Ris"/>
-                                        <constraint firstItem="uTF-GM-rQn" firstAttribute="leading" secondItem="Y4Q-gY-2b0" secondAttribute="trailing" constant="8" id="dNE-lk-VXZ"/>
-                                        <constraint firstAttribute="trailing" secondItem="uTF-GM-rQn" secondAttribute="trailing" id="lTq-uR-iXS"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="checkBox" destination="Y4Q-gY-2b0" id="8sy-di-ekH"/>
-                                    <outlet property="taskName" destination="uTF-GM-rQn" id="9IL-6S-Vm4"/>
+                                    <outlet property="taskName" destination="PoA-Dj-sP6" id="Efc-yg-vfk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

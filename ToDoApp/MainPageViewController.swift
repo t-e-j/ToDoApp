@@ -17,11 +17,50 @@ class MainPageViewController: UITableViewController, NewTask, TaskCompletion {
     
     @IBOutlet var viewOfTable: UITableView!
     var toDoTasks : [Task]=[]
+//    var toDoTasks : [String] = []
     
     override func viewDidLoad() {
-        toDoTasks.append(Task(taskTitle: "Study for mid-term of Multimedia class"))
-        toDoTasks.append(Task(taskTitle: "Visit OIP "))
-        toDoTasks.append(Task(taskTitle: "Complete assignment!"))
+//        toDoTasks.append(Task(taskTitle: "Study for mid-term of Multimedia class",completed: true))
+//        toDoTasks.append(Task(taskTitle: "Visit OIP ",completed: false ))
+//        toDoTasks.append(Task(taskTitle: "Complete assignment!", completed : true))
+        //toDoTasks.append(Task())
+        
+        let decoder = JSONDecoder()
+        
+//        print ("Printing complete dictionary")
+////        print(Array(UserDefaults.standard.dictionaryRepresentation()))
+//        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
+//            print("\(key) = \(value) \n")
+//        }
+//
+        
+        guard let taskDataFromStorage = UserDefaults.standard.object(forKey: "2") as? Data else {
+            return
+        }
+        
+        print ("taskDataFromStorage")
+        print (taskDataFromStorage)
+        
+        //        guard let taskFromStorage = try? decoder.decode(Task.self, from: taskDataFromStorage) else {
+        //            return
+        //        }
+        guard let tasksFromStorage = try? decoder.decode(Array<Task>.self, from: taskDataFromStorage) else {
+            return
+        }
+        print ("taskFromStorage")
+//        print (taskFromStorage)
+        
+        toDoTasks = tasksFromStorage
+        print ("toDoTasks")
+        print (toDoTasks)
+        viewOfTable.reloadData()
+        
+        
+//        toDoTasks[index].completed = completed
+//        viewOfTable.reloadData()
+//        
+//        print ("toDoTasks")
+//        print (toDoTasks)
     }
     
     
@@ -53,20 +92,75 @@ class MainPageViewController: UITableViewController, NewTask, TaskCompletion {
         return eachCell
     }
     
-    func newTask(taskTitle: String) {
-        toDoTasks.append(Task(taskTitle: taskTitle))
+    func newTask(taskTitle: String, completed: Bool) {
+//        toDoTasks.append(Task(taskTitle: taskTitle, completed:completed))
+//        viewOfTable.reloadData()
+        
+        
+        let myTask = Task(taskTitle:taskTitle, completed:completed)
+        
+        let encoder = JSONEncoder()
+//        let decoder = JSONDecoder()
+        
+        
+        
+//        guard let taskDataFromStorage = UserDefaults.standard.object(forKey: "2") as? Data else {
+//            return
+//        }
+//
+//        print ("taskDataFromStorage")
+//        print (taskDataFromStorage)
+//
+////        guard let taskFromStorage = try? decoder.decode(Task.self, from: taskDataFromStorage) else {
+////            return
+////        }
+//        guard let taskFromStorage = try? decoder.decode(Task.self, from: taskDataFromStorage) else {
+//            return
+//        }
+//        print ("taskFromStorage")
+//        print (taskFromStorage)
+//
+//        toDoTasks.append(taskFromStorage)
+//        print ("toDoTasks")
+//        print (toDoTasks)
+        
+        
+        toDoTasks.append(myTask)
+        
+        
+        guard let encoded = try? encoder.encode(toDoTasks) else {
+            return
+        }
+        print ("Encoded!")
+        print (encoded)
+        
+        UserDefaults.standard.set(encoded, forKey:"2")
+        
         viewOfTable.reloadData()
     }
-    
+
     
     func completionOfTask(completed: Bool, index: Int) {
+        let encoder = JSONEncoder()
         toDoTasks[index].completed = completed
+        
+        guard let encoded = try? encoder.encode(toDoTasks) else {
+            return
+        }
+        
+        UserDefaults.standard.set(encoded, forKey:"2")
+        
         viewOfTable.reloadData()
+
+        print ("toDoTasks")
+        print (toDoTasks)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let details = segue.destination as! NewTaskController
         details.delegate = self
+    
         
     }
 }
