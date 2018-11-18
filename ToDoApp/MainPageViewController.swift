@@ -55,6 +55,12 @@ class MainPageViewController: UITableViewController, NewTask, TaskCompletion {
         print (toDoTasks)
         viewOfTable.reloadData()
         
+        TaskManager.shared.tasks = toDoTasks
+        print ("TaskManager.shared.tasks")
+        print (TaskManager.shared.tasks)
+        
+//        performSegue(withIdentifier: "completed", sender: self)
+        
         
 //        toDoTasks[index].completed = completed
 //        viewOfTable.reloadData()
@@ -158,9 +164,31 @@ class MainPageViewController: UITableViewController, NewTask, TaskCompletion {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let details = segue.destination as! NewTaskController
-        details.delegate = self
-    
+        
+        if let details = segue.destination as? NewTaskController {
+            details.delegate = self
+        } else if let completedTasks = segue.destination as? CompletedTasksController {
+            completedTasks.completedTasksArray = toDoTasks
+            //
+            //            print ("I am in main view controller , printing toDoTasks")
+            //            print (toDoTasks)
+        }
+        
+        
+        //let completedTasks = segue.destination as! CompletedTaskController
+        
+//        if segue.identifier == "completed"
+//        {
+//            let completedTasks : CompletedTaskController = segue.destination as! CompletedTaskController
+//
+//            completedTasks.completedTasksArray = toDoTasks
+//
+//            print ("I am in main view controller , printing toDoTasks")
+//            print (toDoTasks)
+//
+//        }
+//
+        
         
     }
 }
