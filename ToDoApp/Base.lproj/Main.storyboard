@@ -64,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="2258" y="-299"/>
         </scene>
-        <!--Item-->
+        <!--All Tasks-->
         <scene sceneID="3oa-Dg-ulW">
             <objects>
                 <tableViewController id="y8z-MP-ruz" customClass="MainPageViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,7 +120,9 @@
                             <outlet property="delegate" destination="y8z-MP-ruz" id="AP5-u2-xY0"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="krd-uj-7az"/>
+                    <tabBarItem key="tabBarItem" title="All Tasks" image="list" id="krd-uj-7az" userLabel="All Tasks" colorLabel="IBBuiltInLabel-Red">
+                        <color key="badgeColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="rfa-Fu-4AZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dAZ-TK-XKp">
                             <connections>
@@ -137,7 +139,7 @@
             </objects>
             <point key="canvasLocation" x="1302" y="-299"/>
         </scene>
-        <!--Item-->
+        <!--Pending Tasks-->
         <scene sceneID="NTx-io-aaa">
             <objects>
                 <tableViewController id="Clh-5M-wzM" customClass="PendingTasksController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -165,7 +167,7 @@
                             <outlet property="delegate" destination="Clh-5M-wzM" id="JZH-s9-Ico"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="jHl-am-Qtg"/>
+                    <tabBarItem key="tabBarItem" title="Pending Tasks" image="clock" id="jHl-am-Qtg"/>
                     <connections>
                         <outlet property="ViewOfPendingTable" destination="pQQ-As-sXh" id="fnk-AZ-C6L"/>
                     </connections>
@@ -174,18 +176,22 @@
             </objects>
             <point key="canvasLocation" x="414" y="1129"/>
         </scene>
-        <!--Item-->
+        <!--All Tasks-->
         <scene sceneID="B4W-ey-zWK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R30-1O-4jb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="mR7-sN-6GU"/>
+                    <tabBarItem key="tabBarItem" title="All Tasks" id="mR7-sN-6GU">
+                        <color key="badgeColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pr3-Ku-sXM" colorLabel="IBBuiltInLabel-Purple">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                            <color key="textColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -197,7 +203,7 @@
             </objects>
             <point key="canvasLocation" x="385" y="-332"/>
         </scene>
-        <!--Item-->
+        <!--Completed Tasks-->
         <scene sceneID="reh-UO-zMF">
             <objects>
                 <tableViewController id="G7W-3G-VrJ" customClass="CompletedTasksController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -242,7 +248,7 @@
                             <outlet property="delegate" destination="G7W-3G-VrJ" id="Qnd-Et-vCN"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="VK4-AY-O6Z"/>
+                    <tabBarItem key="tabBarItem" title="Completed Tasks" image="checked" id="VK4-AY-O6Z"/>
                     <connections>
                         <outlet property="ViewOfCompletedTable" destination="uls-D2-gON" id="20G-bf-Wgq"/>
                     </connections>
@@ -260,6 +266,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="R30-1O-4jb" kind="relationship" relationship="viewControllers" id="ePX-gi-WaD"/>
@@ -273,6 +289,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checked" width="30" height="30"/>
+        <image name="clock" width="30" height="30"/>
+        <image name="list" width="30" height="30"/>
         <image name="unchecked50" width="37.5" height="37.5"/>
     </resources>
+    <color key="tintColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -19,6 +19,9 @@ class MainPageViewController: UITableViewController, NewTask, TaskCompletion {
     var toDoTasks : [Task]=[]
 //    var toDoTasks : [String] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationItem.title = "To Do Tasks"
+    }
     override func viewDidLoad() {
 //        toDoTasks.append(Task(taskTitle: "Study for mid-term of Multimedia class",completed: true))
 //        toDoTasks.append(Task(taskTitle: "Visit OIP ",completed: false ))
